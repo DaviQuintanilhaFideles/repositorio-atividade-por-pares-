@@ -2,53 +2,75 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde Futuro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verde Futuro</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS personalizado -->
-    <link rel="stylesheet" href="public/css/style.css">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body style="background-color: #f0fff0;">
 
-    <!-- Cabeçalho -->
-    <header class="site-header d-flex flex-wrap align-items-center justify-content-between p-4">
-        <div class="logo text-white fw-bold fs-3">Verde Futuro</div>
+  <!-- Cabeçalho -->
+  <header class="site-header d-flex flex-wrap align-items-center justify-content-between p-4">
+    <div class="logo text-white fw-bold fs-3">Verde Futuro</div>
 
-        <nav class="menu-principal">
-            <ul class="d-flex flex-wrap gap-3">
-                <li><a href="#" class="nav-link" data-pagina="home">Home</a></li>
-                <li><a href="#" class="nav-link" data-pagina="sobre">Sobre</a></li>
-                <li><a href="#" class="nav-link" data-pagina="servicos">Serviços</a></li>
-                <li><a href="#" class="nav-link" data-pagina="contatos">Contatos</a></li>
-                <li><a href="#" class="nav-link" data-pagina="doacoes">Doações</a></li>
-                <li><a href="#" class="nav-link" data-pagina="localizacoes">Localizações</a></li>
-            </ul>
-        </nav>
+    <nav class="menu-principal">
+      <ul class="d-flex flex-wrap gap-3">
+        <li><a href="#" class="nav-link" data-pagina="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-pagina="sobre">Sobre</a></li>
+        <li><a href="#" class="nav-link" data-pagina="servicos">Serviços</a></li>
+        <li><a href="#" class="nav-link" data-pagina="contatos">Contatos</a></li>
+        <li><a href="#" class="nav-link" data-pagina="doacoes">Doações</a></li>
+        <li><a href="#" class="nav-link" data-pagina="localizacoes">Localizações</a></li>
+      </ul>
+    </nav>
 
-        <!-- Barra de pesquisa -->
-        <form class="barra-de-pesquisa-header d-flex" action="#" method="GET">
-            <input type="text" placeholder="Buscar..." name="buscar">
-            <button type="submit">🔍</button>
-        </form>
-    </header>
+    <!-- Barra de pesquisa -->
+    <form class="barra-de-pesquisa-header d-flex" action="#" method="GET">
+      <input type="text" placeholder="Buscar..." name="buscar">
+      <button type="submit">🔍</button>
+    </form>
+  </header>
 
-    <!-- Área de conteúdo dinâmica -->
-    <main class="container my-4" id="conteudo"></main>
+  <!-- Área de conteúdo dinâmica -->
+  <main class="container my-4" id="conteudo">
+    <h2>Sobre a organização</h2>
+    <p>A Verde Futuro é uma organização sem fins lucrativos que acredita no poder da natureza para
+      transformar vidas. Nosso trabalho une duas causas essenciais: a preservação do meio ambiente e o
+      combate à fome.
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      Cuidamos do planeta através de projetos de reflorestamento, hortas comunitárias e ações de
+      conscientização sobre práticas sustentáveis. Ao mesmo tempo, ajudamos famílias em situação de
+      vulnerabilidade com alimentos frescos e nutritivos, vindos diretamente das colheitas que
+      apoiamos.
 
-    <!-- Dados do site (simulando conteudo.json) -->
-    <script>
-        window.conteudo = {
-            "home": {
-                "titulo": "🌱 Bem-vindo à Verde Futuro 🌱",
-                "html": `
+      <br>Nosso compromisso é semear esperança, promover o cuidado com a Terra e garantir que ninguém
+      fique sem o básico: comida na mesa e dignidade. <br>
+      Nossa missão é promover ações que preservem o verde e garantam um futuro mais justo.
+      Plantamos árvores, cultivamos hortas comunitárias e transformamos solidariedade em alimento para
+      famílias em situação de vulnerabilidade. <br>
+    </p>
+
+
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script unificado (app.js) -->
+<script src="js/app.js"></script>
+
+  <!-- Dados do site (simulando conteudo.json) -->
+  <script>
+    window.conteudo = {
+      "home": {
+        "titulo": "🌱 Bem-vindo à Verde Futuro 🌱",
+        "html": `
           <!-- Carrossel -->
           <section class="my-4">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -132,39 +154,41 @@
             </div>
           </section>
         `
-            },
-            "sobre": { "titulo": "Sobre Nós", "html": "<p>A Verde Futuro acredita que sustentabilidade e solidariedade caminham juntas.</p>" },
-            "servicos": { "titulo": "Serviços", "html": "<p>Conheça nossos projetos e serviços voltados à comunidade.</p>" },
-            "contatos": { "titulo": "Contatos", "html": "<p>Entre em contato conosco através do formulário.</p>" },
-            "doacoes": { "titulo": "Doações", "html": "<p>Faça doações e ajude nossos projetos.</p>" },
-            "localizacoes": { "titulo": "Localizações", "html": "<p>Veja onde atuamos e participe.</p>" }
-        };
-    </script>
+      },
+      "sobre": { "titulo": "Sobre Nós", "html": "<p>A Verde Futuro acredita que sustentabilidade e solidariedade caminham juntas.</p>" },
+      "servicos": { "titulo": "Serviços", "html": "<p>Conheça nossos projetos e serviços voltados à comunidade. </p>" },
+      "contatos": { "titulo": "Contatos", "html": "<p>Entre em contato conosco através do formulário.</p>" },
+      "doacoes": { "titulo": "Doações", "html": "<p>Faça doações e ajude nossos projetos.</p>" },
+      "localizacoes": { "titulo": "Localizações", "html": "<p>Veja onde atuamos e participe.</p>" }
+    };
+  </script>
 
-    <!-- Script para navegação SPA -->
-    <script>
-        function carregarPagina(pagina = "home") {
-            const area = document.getElementById("conteudo");
-            const paginaSelecionada = window.conteudo[pagina];
+  <!-- Script para navegação SPA -->
+  <script>
+    function carregarPagina(pagina = "home") {
+      const area = document.getElementById("conteudo");
+      const paginaSelecionada = window.conteudo[pagina];
 
-            if (!paginaSelecionada) {
-                area.innerHTML = "<p>Página não encontrada.</p>";
-                return;
-            }
+      if (!paginaSelecionada) {
+        area.innerHTML = "<p>Página não encontrada.</p>";
+        return;
+      }
 
-            area.innerHTML = `<h2 class="text-center text-success mb-4">${paginaSelecionada.titulo}</h2>${paginaSelecionada.html}`;
-        }
+      area.innerHTML = `<h2 class="text-center text-success mb-4">${paginaSelecionada.titulo}</h2>${paginaSelecionada.html}`;
+    }
 
-        document.querySelectorAll(".nav-link").forEach(link => {
-            link.addEventListener("click", e => {
-                e.preventDefault();
-                carregarPagina(link.getAttribute("data-pagina"));
-            });
-        });
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        carregarPagina(link.getAttribute("data-pagina"));
+      });
+    });
 
-        // Carrega home por padrão
-        carregarPagina("home");
-    </script>
+    // Carrega home por padrão
+    carregarPagina("home");
+  </script>
+  
+
 
 </body>
 

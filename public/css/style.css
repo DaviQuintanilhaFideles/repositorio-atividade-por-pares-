@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Cabeçalho === */
 .site-header {
-    background: #006400;
+    background: #014d20; /* verde escuro mais bonito */
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -30,25 +30,32 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    color: white;
 }
 
+/* === Menu de navegação === */
 .menu-principal ul {
-    list-style: none;
+    list-style: none !important; /* garante que nenhuma bolinha apareça */
     display: flex;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
 
+.menu-principal li {
+    list-style-type: none !important;
+}
+
 .menu-principal a {
-    color: white;
+    color: #ffffff !important; /* branco puro */
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
     transition: color 0.3s, transform 0.3s;
 }
 
 .menu-principal a:hover {
-    color: #90ee90;
+    color: #90ee90; /* verde claro no hover */
     transform: scale(1.1);
 }
 
@@ -73,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 .barra-de-pesquisa-header button {
     background: none;
     border: none;
-    color: #006400;
+    color: #014d20;
     font-weight: bold;
     cursor: pointer;
     margin-left: 5px;
@@ -131,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Footer === */
 .site-footer {
-    background: #006400;
+    background: #014d20;
     color: white;
     text-align: center;
     padding: 25px 40px;
@@ -153,6 +160,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+        align-items: center;
     }
 
     .barra-de-pesquisa-header {
