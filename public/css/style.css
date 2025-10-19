@@ -7,13 +7,19 @@ body {
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: bold;
 }
 
 /* === Cabeçalho === */
 .site-header {
-    background: #014d20; /* verde escuro mais bonito */
+    background: #014d20;
+    /* verde escuro mais bonito */
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     padding: 15px 40px;
     gap: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,7 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Menu de navegação === */
 .menu-principal ul {
-    list-style: none !important; /* garante que nenhuma bolinha apareça */
+    list-style: none !important;
+    /* garante que nenhuma bolinha apareça */
     display: flex;
     gap: 25px;
     margin: 0;
@@ -47,7 +54,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-principal a {
-    color: #ffffff !important; /* branco puro */
+    color: #ffffff !important;
+    /* branco puro */
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -55,7 +63,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-principal a:hover {
-    color: #90ee90; /* verde claro no hover */
+    color: #90ee90;
+    /* verde claro no hover */
     transform: scale(1.1);
 }
 
@@ -65,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     border-radius: 50px;
     padding: 5px 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     align-items: center;
 }
 
@@ -111,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-title {
@@ -167,4 +176,33 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         margin-top: 10px;
     }
+}
+
+/* Botão verde */
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    transform: scale(1.03);
+}
+
+/* Animação do conteúdo principal */
+#conteudo-principal {
+    transition: opacity 0.3s ease;
+}
+
+/* Animação do conteúdo de detalhes */
+#conteudo-detalhes {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#conteudo-detalhes.carregado {
+    opacity: 1;
+    transform: translateY(0);
 }

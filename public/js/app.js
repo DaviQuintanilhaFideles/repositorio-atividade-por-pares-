@@ -1,4 +1,4 @@
-// === Dados dinâmicos das páginas (antes estava em conteudo.js) ===
+// Conteúdos das páginas SPA
 window.conteudo = {
   home: {
     titulo: "🌱 Bem-vindo à Verde Futuro 🌱",
@@ -55,26 +55,31 @@ window.conteudo = {
               <div class="card-body">
                 <h5 class="card-title">Projeto Reflorestamento</h5>
                 <p class="card-text">Ações de plantio de árvores em áreas degradadas, promovendo a recuperação ambiental e a biodiversidade.</p>
+                <button class="btn btn-success w-100 mt-2" onclick="detalhesProjeto('reflorestamento')">Saiba Mais</button>
               </div>
               <div class="card-footer text-success fw-bold">Meio Ambiente</div>
             </div>
           </div>
+
           <div class="col">
             <div class="card h-100 shadow-sm">
               <img src="https://picsum.photos/id/1050/400/250" class="card-img-top" alt="Horta Comunitária">
               <div class="card-body">
                 <h5 class="card-title">Horta Comunitária</h5>
                 <p class="card-text">Criação e manutenção de hortas coletivas para fortalecer a alimentação saudável e o convívio comunitário.</p>
+                <button class="btn btn-success w-100 mt-2" onclick="detalhesProjeto('horta')">Saiba Mais</button>
               </div>
               <div class="card-footer text-success fw-bold">Sustentabilidade</div>
             </div>
           </div>
+
           <div class="col">
             <div class="card h-100 shadow-sm">
               <img src="https://picsum.photos/id/1060/400/250" class="card-img-top" alt="Educação Ambiental">
               <div class="card-body">
                 <h5 class="card-title">Educação Ambiental</h5>
                 <p class="card-text">Oficinas e palestras em escolas e comunidades, incentivando práticas ecológicas e consciência ambiental.</p>
+                <button class="btn btn-success w-100 mt-2" onclick="detalhesProjeto('educacao')">Saiba Mais</button>
               </div>
               <div class="card-footer text-success fw-bold">Educação</div>
             </div>
@@ -83,100 +88,41 @@ window.conteudo = {
       </section>
     `
   },
-  sobre: {
-    titulo: "Sobre Nós",
-    html: `
-      <section>
-        <h3 class="text-success">Quem Somos</h3>
-        <p>A Verde Futuro acredita que sustentabilidade e solidariedade caminham juntas. Atuamos em projetos que restauram o meio ambiente e alimentam famílias em situação de vulnerabilidade.</p>
-      </section>
-    `
-  },
-  servicos: {
-    titulo: "Nossos Projetos",
-    html: `
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="https://picsum.photos/id/1040/400/250" class="card-img-top" alt="Reflorestamento">
-            <div class="card-body">
-              <h5 class="card-title">Projeto Reflorestamento</h5>
-              <p class="card-text">Recuperamos áreas degradadas e promovemos a biodiversidade.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="https://picsum.photos/id/1050/400/250" class="card-img-top" alt="Horta Comunitária">
-            <div class="card-body">
-              <h5 class="card-title">Horta Comunitária</h5>
-              <p class="card-text">Hortas urbanas sustentáveis que produzem alimento e união.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="https://picsum.photos/id/1060/400/250" class="card-img-top" alt="Educação Ambiental">
-            <div class="card-body">
-              <h5 class="card-title">Educação Ambiental</h5>
-              <p class="card-text">Palestras e oficinas para conscientizar comunidades.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    `
-  },
-  contatos: {
-    titulo: "Fale Conosco",
-    html: `
-      <form class="mx-auto mt-4" style="max-width: 500px;">
-        <input type="text" class="form-control mb-3" placeholder="Seu nome">
-        <input type="email" class="form-control mb-3" placeholder="Seu e-mail">
-        <textarea class="form-control mb-3" placeholder="Mensagem"></textarea>
-        <button type="submit" class="btn btn-success w-100">Enviar</button>
-      </form>
-    `
-  },
-  doacoes: {
-    titulo: "Doações",
-    html: `
-      <p>Contribua com nossa causa e ajude a transformar vidas.</p>
-      <button class="btn btn-outline-success">Fazer Doação</button>
-    `
-  },
-  localizacoes: {
-    titulo: "Nossas Localizações",
-    html: `
-      <p>Temos projetos em várias cidades do Brasil!</p>
-      <img src="https://picsum.photos/id/1070/900/400" class="img-fluid rounded shadow" alt="Mapa">
-    `
-  }
+  sobre: { titulo: "Sobre Nós", html: "<p>Conteúdo sobre a Verde Futuro.</p>" },
+  servicos: { titulo: "Serviços", html: "<p>Conteúdo sobre serviços.</p>" },
+  contatos: { titulo: "Contatos", html: "<p>Formulário ou informações de contato.</p>" },
+  doacoes: { titulo: "Doações", html: "<p>Informações sobre doações.</p>" },
+  localizacoes: { titulo: "Localizações", html: "<p>Mapa e endereços das unidades.</p>" }
 };
 
-// === Função de navegação SPA (já estava no seu app.js) ===
-function carregarPagina(pagina = "home") {
-  const area = document.getElementById("conteudo");
-  const paginaSelecionada = window.conteudo[pagina];
-
-  if (!paginaSelecionada) {
-    area.innerHTML = "<p>Página não encontrada.</p>";
-    return;
-  }
-
-  area.innerHTML = `
-    <h2 class="text-center text-success mb-4">${paginaSelecionada.titulo}</h2>
-    ${paginaSelecionada.html}
-  `;
+// Carrega a página
+function carregarPagina(pagina) {
+  const conteudoPagina = window.conteudo[pagina];
+  if (!conteudoPagina) return;
+  document.getElementById("titulo-pagina").innerText = conteudoPagina.titulo;
+  document.getElementById("conteudo").innerHTML = conteudoPagina.html;
+  history.pushState({ pagina }, conteudoPagina.titulo, `#${pagina}`);
 }
 
-// === Eventos de clique nos links do menu ===
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const pagina = link.getAttribute("data-pagina");
-    carregarPagina(pagina);
+// Inicialização e menu
+document.addEventListener("DOMContentLoaded", () => {
+  const paginaInicial = location.hash.replace("#", "") || "home";
+  carregarPagina(paginaInicial);
+
+  const linksMenu = document.querySelectorAll("nav a");
+  linksMenu.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const pagina = link.getAttribute("href").replace("#", "");
+      carregarPagina(pagina);
+    });
   });
 });
 
-// === Carrega home por padrão ===
-carregarPagina("home");
+// Voltar/Avançar navegador
+window.addEventListener("popstate", (event) => {
+  const pagina = event.state?.pagina || "home";
+  carregarPagina(pagina);
+});
+
+
